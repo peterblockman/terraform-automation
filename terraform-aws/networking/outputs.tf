@@ -17,3 +17,11 @@ output "db_security_group" {
   value = [aws_security_group.peter_sg["rds"].id]
 }
 
+output "public_sg" {
+  value = [aws_security_group.peter_sg["public"].id]
+}
+
+
+output "public_subnets" {
+  value = aws_subnet.peter_public_subnet.*.id
+}
